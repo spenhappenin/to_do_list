@@ -1,0 +1,24 @@
+<h1>  Your ToDo List </h1>
+<hr />
+
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <%= post.title %>
+      <%= link_to 'Show', post_path(post) %>
+      <%= link_to 'Edit', edit_post_path(post) %>
+      <%= link_to 'Delete', post_path(post),
+      method: :delete, data: {confirm: 'Are you sure you
+      want to delete?'} %>
+
+      <%= form_for post do |f| %>
+      <%= f.label :completed %>
+      <%= f.check_box :completed %>
+      <br />
+      <%= f.submit %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Add New Item', new_post_path %>

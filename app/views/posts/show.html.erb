@@ -1,0 +1,20 @@
+<h1> <%= @post.title %> </h1>
+<hr />
+
+<h3>
+  Title:
+    <strong> <%= @post.title %> </strong>
+</h3>
+
+<p>
+  Date:
+  <i> <%= @post.date %> </i>
+</p>
+
+<blockquote>
+  <%= @post.body %>
+</blockquote>
+
+<p> <%= @post.completed %> </p>
+
+<%= link_to 'Main Page', posts_path %>
